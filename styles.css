@@ -121,3 +121,14 @@ section ul li {
     font-size: 0.8em;
     color: #666; 
 }
+.clickable-list {
+	list-style-type: none;
+}
+
+.clickable-list li {
+	cursor: pointer;
+}
+
+.clickable-list li:hover {
+	text-decoration: underline;
+}

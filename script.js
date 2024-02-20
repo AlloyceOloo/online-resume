@@ -1,9 +1,19 @@
 // Used on the résumé to make the employment history interactive (each job is clickable)
 document.addEventListener('DOMContentLoaded', function () {
+
+    var listItems = document.querySelectorAll('.clickable-list li');
+    listItems.forEach(function(item) {
+	item.addEventListener('click', function() {
+		var link = item.getAttribute('data-link');
+		if (link) {
+			window.location.href = link;
+		}
+	});
+    });
     // Placeholder array with employment history data
     const employmentHistory = [
-        { id: 1, title: 'Job Title', company: 'Company Name', years: 'Year - Year', description: 'Description of what you did' },
-        { id: 2, title: 'Job Title', company: 'Company Name', years: 'Year - Year', description: 'Description of what you did' },
+        { id: 1, title: 'Software Developer Intern', company: 'Professional Digital Systems Limited', years: '2023.1 - 2023.6', description: 'Assisted the lead developer in developing and maintaining internal company websites.' },
+        { id: 2, title: 'IT intern', company: 'Safaricom PLC', years: '2023.9 - 2024.3', description: 'Created reports to support the business side of safaricom product teams.' },
         { id: 3, title: 'Job Title', company: 'Company Name', years: 'Year - Year', description: 'Description of what you did' }
         // Add more entries as needed
     ];
